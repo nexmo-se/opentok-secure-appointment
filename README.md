@@ -64,7 +64,7 @@ MINUTES_SESSION_ALLOWED_AFTER: The amount of time, in minutes, a participant can
 
 VUE_APP_VIDEO_CALL_LOGO_URL: Your logo URL  
 VUE_APP_VIDEO_CALL_COMPANY_NAME: Your company name  
-VUE_APP_API_SERVER_URL: The deployed server's URL  
+VUE_APP_API_SERVER_URL: The deployed server's URL - Please verify that the port is the one your server is running on!
 VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 ** Please note that some variables have default values and some are not listed above **
