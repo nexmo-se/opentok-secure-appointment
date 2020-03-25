@@ -261,7 +261,7 @@
       },
       formatVideoURL(token) {
         if (process.env.NODE_ENV === "development") {
-          return `http://localhost:8080/video?token=${token}`;
+          return `${location.origin}/video?token=${token}`;
         }
         return `${this.serverUrl}/video?token=${token}`;
       },
