@@ -75,7 +75,7 @@ VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 2. Install dependencies: `npm install`.
 
-3. Copy `.env.example` to `.env` and edit the environment variables.
+3. Copy `env.example` to `.env` and edit the environment variables.
 
 4. Run the server and the client app: `npm run start`. This will run both
    the server and the client app.
