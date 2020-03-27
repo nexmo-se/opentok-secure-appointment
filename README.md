@@ -77,7 +77,7 @@ VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 3. Copy `env.example` to `.env` and edit the environment variables.
 
-4. Run the server and the client app: `npm run start`. This will run both
+4. Run the server and the client app: `npm run start-dev`. This will run both
    the server and the client app.
 
 Open http://localhost:8080/booking in your browser.
