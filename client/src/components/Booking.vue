@@ -205,7 +205,7 @@
           };
 
           const result = await this.$http.post(
-            `${this.serverUrl}/appointment`,
+            `${this.originApiUrl}/appointment`,
             body
           );
           this.$swal("Success", "The appointment has been scheduled!", "success");
@@ -245,7 +245,7 @@
 
           try {
             const result = await this.$http.post(
-              `${this.serverUrl}/message`,
+              `${this.originApiUrl}/message`,
               body
             );
             this.$swal("Success", "SMS Sent successfully!", "success");
