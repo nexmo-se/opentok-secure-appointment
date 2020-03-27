@@ -82,6 +82,6 @@ VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 Open http://localhost:8080/booking in your browser.
 
-## Deploy on Heroku
+## Deploy to Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
