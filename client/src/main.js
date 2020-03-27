@@ -20,7 +20,7 @@ Vue.use(VueClipboard);
 Vue.use(BootstrapVue)
 
 const routes = [
-	{ path: '/booking', component: Booking, props: true },
+	{ path: '/booking', component: Booking },
 	{ path: '/video', component: VideoCall, query: { token: '' } },
 	{ path: '*', redirect: '/booking' }
 ];
