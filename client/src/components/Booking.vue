@@ -129,9 +129,14 @@
       BFormDatepicker,
       BFormTimepicker
     },
+    props: {
+        originApiUrl: {
+            type: String,
+            default: ''
+        }
+    },
     data() {
       return {
-        serverUrl: process.env.VUE_APP_API_SERVER_URL,
         apppointmentList: [],
         appointmentDetails: {},
         tableItems: [],
@@ -157,7 +162,7 @@
     methods: {
       async fetchAppointments() {
         this.apppointmentList = (
-          await this.$http.get(`${this.serverUrl}/appointment/list`)
+          await this.$http.get(`${this.originApiUrl}/appointment/list`)
         ).data;
       },
       updateTable() {
@@ -200,7 +205,7 @@
           };
 
           const result = await this.$http.post(
-            `${this.serverUrl}/appointment`,
+            `${this.originApiUrl}/appointment`,
             body
           );
           this.$swal("Success", "The appointment has been scheduled!", "success");
@@ -240,7 +245,7 @@
 
           try {
             const result = await this.$http.post(
-              `${this.serverUrl}/message`,
+              `${this.originApiUrl}/message`,
               body
             );
             this.$swal("Success", "SMS Sent successfully!", "success");

@@ -4,7 +4,7 @@
       :company-name="companyName"
       :logo="logo"
     />
-    <router-view />
+    <router-view :origin-api-url="originApiUrl" />
   </div>
 </template>
 
@@ -20,8 +20,18 @@
     data: function() {
       return {
         companyName: process.env.VUE_APP_VIDEO_CALL_COMPANY_NAME,
-        logo: process.env.VUE_APP_VIDEO_CALL_LOGO_URL
+        logo: process.env.VUE_APP_VIDEO_CALL_LOGO_URL,
+        serverUrl: process.env.VUE_APP_API_SERVER_URL,
       };
+    },
+    computed: {
+        originApiUrl: function () {
+            let url = location.origin;
+            if (process.env.NODE_ENV === "development") {
+                url = this.serverUrl;
+            }
+            return url;
+        },
     }
   };
 

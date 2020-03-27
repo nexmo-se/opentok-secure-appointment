@@ -64,7 +64,7 @@ MINUTES_SESSION_ALLOWED_AFTER: The amount of time, in minutes, a participant can
 
 VUE_APP_VIDEO_CALL_LOGO_URL: Your logo URL  
 VUE_APP_VIDEO_CALL_COMPANY_NAME: Your company name  
-VUE_APP_API_SERVER_URL: The deployed server's URL - Please verify that the port is the one your server is running on!
+VUE_APP_API_SERVER_URL: The development server's URL - Please verify that the port is the one your server is running on! This option is used only in development
 VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 ** Please note that some variables have default values and some are not listed above **
@@ -77,7 +77,11 @@ VUE_APP_AUDIO_ONLY: Join video session with video unpublished
 
 3. Copy `env.example` to `.env` and edit the environment variables.
 
-4. Run the server and the client app: `npm run start`. This will run both
+4. Run the server and the client app: `npm run start-dev`. This will run both
    the server and the client app.
 
 Open http://localhost:8080/booking in your browser.
+
+## Deploy on Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)

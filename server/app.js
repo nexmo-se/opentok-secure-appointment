@@ -10,8 +10,6 @@ const history = require('connect-history-api-fallback');
 const services = require('./services')
 const indexRouter = require('./routes');
 
-const port = 3000;
-
 const app = express();
 
 app.use(cors());
@@ -25,7 +23,5 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.set('view engine', 'html');
 
 app.use('/', indexRouter(services));
-
-app.listen(port, 'localhost', () => console.log(`Server application listening on port ${port}!`));
 
 module.exports = app;

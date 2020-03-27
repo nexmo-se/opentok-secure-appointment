@@ -35,12 +35,17 @@ export default {
     WaitingRoom,
     Call
   },
+  props: {
+        originApiUrl: {
+            type: String,
+            default: ''
+        }
+    },
   data() {
     return {
       apiKey: null,
       sessionId: null,
       token: null,
-      serverUrl: process.env.VUE_APP_API_SERVER_URL,
       state: VIDEO_CALL_STATE.LOADING,
       waitingRoomState: null
     };
@@ -55,8 +60,8 @@ export default {
   },
   created() {},
   async mounted() {
-      try {           
-        const result = (await this.$http.get(`${this.serverUrl}/token/${this.$route.query.token}`)).data;
+      try {
+        const result = (await this.$http.get(`${this.originApiUrl}/token/${this.$route.query.token}`)).data;
         const {apiKey, sessionId, token} = result;
         this.apiKey = apiKey;
         this.sessionId = sessionId;
