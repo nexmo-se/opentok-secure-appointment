@@ -55,8 +55,12 @@ export default {
   },
   created() {},
   async mounted() {
-      try {           
-        const result = (await this.$http.get(`${this.serverUrl}/token/${this.$route.query.token}`)).data;
+      try {
+        let serverUrl = location.origin;
+        if (process.env.NODE_ENV === "development") {
+          serverUrl = `${this.serverUrl}/video?token=${token}`;
+        }
+        const result = (await this.$http.get(`${serverUrl}/token/${this.$route.query.token}`)).data;
         const {apiKey, sessionId, token} = result;
         this.apiKey = apiKey;
         this.sessionId = sessionId;

@@ -3,5 +3,57 @@
     "description": "Reference application for a secure appointment using Opentok - Video API - Vonage",
     "repository": "https://github.com/nexmo-se/opentok-secure-appointment",
     "logo": "https://node-js-sample.herokuapp.com/node.png",
-    "keywords": ["node", "express", "static"]
+    "env": {
+        "OPENTOK_API_KEY": {
+          "description": "Opentok Api Key",
+          "required": true
+        },
+        "OPENTOK_API_SECRET": {
+            "description": "Opentok Api Secret",
+            "required": true
+        },
+        "OPENTOK_SESSION_MEDIA_MODE": {
+            "description": "Opentok Api Secret",
+            "value": "relayed"
+          },
+          "NEXMO_API_KEY": {
+            "description": "Nexmo Api Key",
+            "required": true
+          },
+          "NEXMO_API_SECRET": {
+            "description": "Nexmo Api Secret",
+            "required": true
+          },
+          "MESSAGING_SMS_FROM": {
+            "description": "From number to send SMS"
+          },
+          "MINUTES_SESSION_ALLOWED_BEFORE": {
+            "description": "The amount of time, in minutes, a participant can join the session before it starts",
+            "value": "30"
+          },
+          "MINUTES_SESSION_ALLOWED_AFTER": {
+            "description": "The amount of time, in minutes, a participant can join the session after it starts",
+            "value": "30"
+          },
+          "VUE_APP_VIDEO_CALL_LOGO_URL": {
+            "description": "Your logo URL",
+            "value": "https://www.vonage.com/assets/images/logo-vonage.svg"
+          },
+          "VUE_APP_VIDEO_CALL_COMPANY_NAME": {
+            "description": "Your company name",
+            "value": "VONAGE API VIDEO"
+          },
+          "VUE_APP_API_SERVER_URL": {
+            "description": "The deployed server's URL - Please verify that the port is the one your server is running on!",
+            "value": "localhost:3000"
+          },
+          "VUE_APP_AUDIO_ONLY": {
+            "description": "Join video session with video unpublished",
+            "value": "false"
+          },
+          "VUE_APP_SMS_TEMPLATE": {
+            "description": "SMS default text",
+            "value": "You have an appointment set for {date} at {time}, please click this link to join! {link}"
+          }
+      }
   }
