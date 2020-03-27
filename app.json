@@ -51,11 +51,6 @@
             "value": "VONAGE API VIDEO",
             "required": false
           },
-          "VUE_APP_API_SERVER_URL": {
-            "description": "The deployed server's URL - Please verify that the port is the one your server is running on!",
-            "value": "localhost:3000",
-            "required": false
-          },
           "VUE_APP_AUDIO_ONLY": {
             "description": "Join video session with video unpublished",
             "value": "false",
