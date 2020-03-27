@@ -12,7 +12,7 @@
     "vue-serve": "vue-cli-service serve",
     "vue-build": "vue-cli-service build",
     "vue-lint": "vue-cli-service lint",
-    "start": "npm run server",
+    "start": "NODE_ENV=production npm run server",
     "start-dev": "concurrently --kill-others \"npm run server\" \"npm run vue-serve\""
   },
   "dependencies": {
