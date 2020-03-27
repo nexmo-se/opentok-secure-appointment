@@ -2,7 +2,11 @@
   "name": "opentok-appointments-server",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
+    "postinstall": "npm run vue-build",
     "server": "node ./server/bin/www",
     "server-dev": "nodemon --inspect ./server/bin/www",
     "vue-serve": "vue-cli-service serve",

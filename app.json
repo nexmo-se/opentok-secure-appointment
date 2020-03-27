@@ -1,0 +1,7 @@
+{
+    "name": "Opentok Secure Appointment",
+    "description": "Reference application for a secure appointment using Opentok - Video API - Vonage",
+    "repository": "https://github.com/nexmo-se/opentok-secure-appointment",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["node", "express", "static"]
+  }
