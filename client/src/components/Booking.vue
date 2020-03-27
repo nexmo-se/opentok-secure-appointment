@@ -129,9 +129,14 @@
       BFormDatepicker,
       BFormTimepicker
     },
+    props: {
+        originApiUrl: {
+            type: String,
+            default: ''
+        }
+    },
     data() {
       return {
-        serverUrl: process.env.VUE_APP_API_SERVER_URL,
         apppointmentList: [],
         appointmentDetails: {},
         tableItems: [],
@@ -156,12 +161,8 @@
     },
     methods: {
       async fetchAppointments() {
-        let serverUrl = location.origin;
-        if (process.env.NODE_ENV === "development") {
-          serverUrl = this.serverUrl;
-        }  
         this.apppointmentList = (
-          await this.$http.get(`${this.serverUrl}/appointment/list`)
+          await this.$http.get(`${this.originApiUrl}/appointment/list`)
         ).data;
       },
       updateTable() {
