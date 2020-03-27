@@ -156,6 +156,10 @@
     },
     methods: {
       async fetchAppointments() {
+        let serverUrl = location.origin;
+        if (process.env.NODE_ENV === "development") {
+          serverUrl = this.serverUrl;
+        }  
         this.apppointmentList = (
           await this.$http.get(`${this.serverUrl}/appointment/list`)
         ).data;

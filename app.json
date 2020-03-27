@@ -19,7 +19,8 @@
         },
         "OPENTOK_SESSION_MEDIA_MODE": {
             "description": "Opentok Session mode: relayed or routed",
-            "value": "relayed"
+            "value": "relayed",
+            "required": false
           },
           "NEXMO_API_KEY": {
             "description": "Nexmo Api Key",

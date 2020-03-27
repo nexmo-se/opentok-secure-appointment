@@ -58,7 +58,7 @@ export default {
       try {
         let serverUrl = location.origin;
         if (process.env.NODE_ENV === "development") {
-          serverUrl = `${this.serverUrl}/video?token=${token}`;
+          serverUrl = this.serverUrl;
         }
         const result = (await this.$http.get(`${serverUrl}/token/${this.$route.query.token}`)).data;
         const {apiKey, sessionId, token} = result;
