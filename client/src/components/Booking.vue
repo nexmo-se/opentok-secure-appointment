@@ -175,8 +175,8 @@
             appointmentName: appointment.name,
             date: this.formatDate(date),
             time: this.formatTime(date),
-            hostURL: this.formatVideoURL(appointment.hostToken),
-            guestURL: this.formatVideoURL(appointment.guestToken)
+            hostURL: `${this.serverUrl}/video?token=${appointment.hostToken}`,
+            guestURL: `${this.serverUrl}/video?token=${appointment.guestToken}`,
           });
         });
       },
@@ -233,7 +233,7 @@
           let template = process.env.VUE_APP_SMS_TEMPLATE;
           template = template.replace("{date}", date);
           template = template.replace("{time}", time);
-          template = template.replace("{link}", this.formatVideoURL(appointment.guestToken));
+          template = template.replace("{link}", `${this.serverUrl}/video?token=${appointment.guestToken}`);
 
           const body = {
             channel: "SMS",
@@ -263,12 +263,6 @@
       },
       formatTime(date) {
         return moment(date).format("h:mm:ss a");
-      },
-      formatVideoURL(token) {
-        if (process.env.NODE_ENV === "development") {
-          return `${location.origin}/video?token=${token}`;
-        }
-        return `${this.serverUrl}/video?token=${token}`;
       },
       onCopy: function(e) {
         alert("Link copied: " + e.text);
