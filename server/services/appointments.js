@@ -1,3 +1,4 @@
+const moment = require('moment'); 
 const Appointment = require('../model/appointment');
 
 module.exports = () => {
@@ -44,23 +45,22 @@ module.exports = () => {
 			console.log(`[Appointments - checkAppointmentOnTime] - tokenUrl:${tokenUrl}`); 
 			
 			const appointment = this.getAppointment(tokenUrl); 
-			const date = new Date(appointment.getDate()); 
-			
-			const minutes = 60000; 
+			const date = moment(appointment.getDate()).utc(); 
 
-			const now = new Date(); 
-			
-			const max = new Date(date.getTime() + process.env.MINUTES_SESSION_ALLOWED_AFTER*minutes);
-			const min = new Date(date.getTime() - process.env.MINUTES_SESSION_ALLOWED_BEFORE*minutes);
+			console.log(`[Appointments - checkAppointmentOnTime] - found appointment: ${JSON.stringify(appointment)}, date moment: ${date.format()}`); 
 
-			console.log(`[Appointments - checkAppointmentOnTime] - found appointment: ${JSON.stringify(appointment)}, current date: ${new Date().toISOString()}`); 
+			const now = moment().utc(); 
+			const after = moment(date).add(process.env.MINUTES_SESSION_ALLOWED_AFTER, 'm'); 
+			const before = moment(date).subtract(process.env.MINUTES_SESSION_ALLOWED_BEFORE, 'm'); 
 
-			if (min <= now && now <= max) { 
-				return {result: 'ON_TIME', appointmentDate: date}; 
-			} else if (now < min) { 
+			console.log(`[Appointments - checkAppointmentOnTime] - momentNow: ${now.format()}, momentBefore: ${before.format()}, momentAfter: ${after.format()}`); 
+
+			if (now.isBefore(before)) { 
 				return {result: 'TOO_EARLY', appointmentDate: date}; 
-			} else { 
+			} else if (now.isAfter(after)) { 
 				return {result: 'TOO_LATE', appointmentDate: date}; 
+			} else { 
+				return {result: 'ON_TIME', appointmentDate: date}; 
 			}
 		}, 
 	}
