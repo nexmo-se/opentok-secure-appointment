@@ -134,16 +134,15 @@
         const shouldSendSMS = this.sendSMS;
 
         try {
-          const dateValue = new Date(this.appointmentDetails.date);
-          dateValue.setHours(
-            this.appointmentDetails.time.substring(0, 2),
-            this.appointmentDetails.time.substring(3, 5),
-            0,
-            0
-          );
+          const momentValue = moment();
+          momentValue.minute(this.appointmentDetails.time.substring(3, 5));
+          momentValue.hour(this.appointmentDetails.time.substring(0, 2));
+          momentValue.date(this.appointmentDetails.date);
+          momentValue.utc();
+          console.log(`momentValue: ${momentValue}`);
 
           const body = {
-            date: dateValue.toISOString(),
+            date: momentValue.toISOString(),
             name: this.appointmentDetails.name
           };
 
