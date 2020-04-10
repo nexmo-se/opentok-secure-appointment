@@ -7,6 +7,8 @@ This repository has two parts - a NodeJS Express Server and a Vue Web Applicatio
 1. [Server](./server/README.md)
 2. [Web Application](./client/README.md)
 
+_NOTE_: This application is a great starting point for building your solution, and on top of it you should be able able to add your own business logic and features.
+
 ## User Story
 
 Assume a healthcare use case of this project, where we would have the following roles:
