@@ -121,11 +121,11 @@ export default {
                  document.getElementById(event.target.id).classList.add('OT_big');
              }
             this.layoutUpdate();
-            })
-            subscriber.on('destroyed', ()=> {
-             console.log('Subscriber destroyed');
-                this.layoutUpdate();
-            })
+        })
+        subscriber.on('destroyed', ()=> {
+            console.log('Subscriber destroyed');
+            this.layoutUpdate();
+        })
         console.log('Stream subscriber', event.stream.id)
     });
     this.session.on('streamDestroyed', ()=>{

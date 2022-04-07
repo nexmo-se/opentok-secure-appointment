@@ -5,7 +5,7 @@
     "logo": "https://node-js-sample.herokuapp.com/node.png",
     "env": {
         "PORT": {
-            "description": "Opentok Api Key",
+            "description": "Server Port",
             "required": false,
             "value": "3000"
         },
