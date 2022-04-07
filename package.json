@@ -1,5 +1,6 @@
 {
   "name": "opentok-appointments-server",
+  "description": "Reference application for a secure appointment using Vonage Video API",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -16,8 +17,8 @@
     "start-dev": "concurrently --kill-others \"npm run server\" \"npm run vue-serve\""
   },
   "dependencies": {
-    "@opentok/client": "^2.17.0",
-    "axios": "^0.19.2",
+    "@opentok/client": "^2.22.1",
+    "axios": "^0.26.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.7.0",
     "connect-history-api-fallback": "^1.6.0",
